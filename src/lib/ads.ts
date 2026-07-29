@@ -9,7 +9,7 @@ export type AdsResult = {
     total: number
 }
 
-const AD_PAGE_SIZE = 3;
+const AD_PAGE_SIZE = 4;
 
 export async function getAds(): Promise<AdDto[]> {
     const ads = await prisma.ad.findMany({
@@ -23,7 +23,8 @@ export async function getAds(): Promise<AdDto[]> {
 
 
 export async function getAdsByFilter({ query, maxPrice, tags, page }: AdQuery): Promise<AdsResult> {
-    
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
     const where: Prisma.AdWhereInput = {
         ...(query !== "" && {
             OR: [
