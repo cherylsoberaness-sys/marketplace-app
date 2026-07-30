@@ -13,7 +13,6 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
     const input = parseAdQuery(queryParams);
     const { ads, totalPages } = await getAdsByFilter(input);
     console.log(queryParams);
-    console.log(ads);
 
     return (
         <main className="space-y-6">

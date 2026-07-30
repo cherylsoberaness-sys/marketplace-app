@@ -1,4 +1,4 @@
-
+import { z } from "zod";
 
 export type SearchParamValue = string | string[] | undefined
 
@@ -8,6 +8,20 @@ export type AdQuery = {
     tags: string[];
     page: number;
 }
+
+
+const PRISMA_INT_MAX = 2_147_483_647;
+
+const idSchema = z
+    .string()
+    .regex(/^[1-9]\d*$/)
+    .transform(Number)
+    .pipe(
+        z.number()
+            .int()
+            .max(PRISMA_INT_MAX)
+    )
+
 
 function first(value: SearchParamValue): string {
     return Array.isArray(value) ? value[0] ?? "" : value ?? "";
@@ -52,4 +66,10 @@ function adQueryParams(input: AdQuery, page: number) {
 export function adListHref(input: AdQuery, page: number): string {
     const queryString = adQueryParams(input, page).toString();
     return queryString ? `/dashboard?${queryString}` : "/dashboard";
+}
+
+export function parseAdId(value: unknown): number | null {
+    const result = idSchema.safeParse(value);
+    
+    return result.success ? result.data : null;
 }

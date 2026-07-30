@@ -11,6 +11,17 @@ export type AdsResult = {
 
 const AD_PAGE_SIZE = 4;
 
+
+export async function getAdIds(): Promise<number[]> {
+    const ads = await prisma.ad.findMany({
+        select: {
+            id: true
+        }
+    });
+
+    return ads.map((ad) => ad.id);
+}
+
 export async function getAds(): Promise<AdDto[]> {
     const ads = await prisma.ad.findMany({
         include: {
@@ -66,4 +77,17 @@ export async function getAdsByFilter({ query, maxPrice, tags, page }: AdQuery): 
         totalPages,
         total
     }
+}
+
+
+export async function getAdById(adId: number): Promise<AdDto | null> {
+    return await prisma.ad.findUnique({
+        where: {
+            id: adId,
+        },
+        include: {
+            owner: true,
+        }
+
+    });
 }
