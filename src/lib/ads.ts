@@ -22,17 +22,6 @@ export async function getAdIds(): Promise<number[]> {
     return ads.map((ad) => ad.id);
 }
 
-export async function getAds(): Promise<AdDto[]> {
-    const ads = await prisma.ad.findMany({
-        include: {
-            owner: true,
-        },
-    });
-
-    return ads
-}
-
-
 export async function getAdsByFilter({ query, maxPrice, tags, page }: AdQuery): Promise<AdsResult> {
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
