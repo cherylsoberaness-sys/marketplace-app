@@ -6,7 +6,7 @@ import { compare } from 'bcrypt';
 import { createSession, destroySession } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 
-const loginSchema = z.object ({
+const loginSchema = z.object({
         email: z.email(),
         password: z.string().min(1)  
 })
