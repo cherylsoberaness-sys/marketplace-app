@@ -51,7 +51,7 @@ export default async function AdDetailPage({ params }: Props) {
     }
 
     const session = await getSession();
-    
+
     const adDetail = await getAdById(adId);
 
     if (!adDetail) {
