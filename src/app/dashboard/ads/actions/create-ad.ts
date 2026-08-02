@@ -21,8 +21,8 @@ export type AdActionState = {
 const createAdSchema = z.object({
     title: z.string().trim().min(3, "title needs at least 3 chars").max(80, 'Title cant have over 80 chars'),
     description: z.string().trim().min(10, "Description needs at least 10 chars").max(500, "Description cant have over 500 chars"),
-    price: z.coerce.number().positive(),
-    tags: z.array(z.string().trim().min(1))
+    price: z.coerce.number().min(0, "Price cannot be negative"),
+    tags: z.array(z.string().trim().min(3))
 });
 
 
