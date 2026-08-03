@@ -15,7 +15,7 @@ Users can perform the following actions:
 
 ## Concepts
 
-- Server Compponents
+- Server Components
 - Server Actions
 - use client
 - use server
@@ -26,7 +26,7 @@ Users can perform the following actions:
 - SSG, SSR, ISR
 - Static params
 - Error Boundaries
-- Unit testng
+- Unit testing
 
 ## Technologies
 
@@ -97,9 +97,25 @@ npm run seed
 ```bash
 npm run dev
 ```
+### Open the application
+
+Once the development server is runing, you can see the app runing here:
+
+```text
+http://localhost:3000
+```
 
 ### Run unit tests
 
 ```bash
 npm run test
 ```
+---
+The app doesnt include a user registration form. Use one of the seeded accounts below to test protected features such as deleting and creating ads. The seeded users already own sample ads, allowing you to test both public and authenticated features immediately:
+
+email: ed@mk.io |
+password: randomPwd123
+
+email: Ss@mk.io |
+password: randomPwd456
+
