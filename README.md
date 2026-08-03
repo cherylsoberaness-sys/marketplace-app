@@ -15,7 +15,7 @@ Users can perform the following actions:
 
 ## Concepts
 
-- Server Compponents
+- Server Components
 - Server Actions
 - use client
 - use server
@@ -26,7 +26,7 @@ Users can perform the following actions:
 - SSG, SSR, ISR
 - Static params
 - Error Boundaries
-- Unit testng
+- Unit testing
 
 ## Technologies
 
