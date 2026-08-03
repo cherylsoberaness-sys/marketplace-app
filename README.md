@@ -103,3 +103,11 @@ npm run dev
 ```bash
 npm run test
 ```
+
+#### Once the database has been seeded, you can log in using the following test users:
+
+email: ed@mk.io
+password: randomPwd123
+
+email: Ss@mk.io
+password: randomPwd456
