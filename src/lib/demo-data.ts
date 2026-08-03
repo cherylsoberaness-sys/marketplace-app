@@ -1,7 +1,7 @@
 
 export const DEMO_USERS = [
   {
-    email: "ed@nd.io",
+    email: "ed@mk.io",
     password: "randomPwd123",
     ads: [
       {
@@ -23,7 +23,7 @@ export const DEMO_USERS = [
     ],
   },
   {
-    email: "Ss@nd.io",
+    email: "Ss@mk.io",
     password: "randomPwd456",
     ads: [
       {
