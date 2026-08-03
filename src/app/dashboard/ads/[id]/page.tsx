@@ -61,7 +61,7 @@ export default async function AdDetailPage({ params }: Props) {
 
     return (
         <section className="grid gap-6">
-            <AdCard hideTitle ad={adDetail} showOwner />
+            <AdCard hideTitle ad={adDetail} showOwner clickable={false} />
             {session?.userId === adDetail.ownerId && <DeleteAdButton adId={adId} />}
         </section>
     )
