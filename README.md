@@ -104,7 +104,7 @@ npm run dev
 npm run test
 ```
 ---
-#### The app doesnt include a user registration form. Use one of the seeded accounts below to test protected features such as deleting and creating ads. The seeded users already own sample ads, allowing you to test both public and authenticated features immediately:
+The app doesnt include a user registration form. Use one of the seeded accounts below to test protected features such as deleting and creating ads. The seeded users already own sample ads, allowing you to test both public and authenticated features immediately:
 
 email: ed@mk.io |
 password: randomPwd123
