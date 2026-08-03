@@ -97,6 +97,13 @@ npm run seed
 ```bash
 npm run dev
 ```
+### Open the application
+
+Once the development server is runing, you can see the app runing here:
+
+```text
+http://localhost:3000
+```
 
 ### Run unit tests
 
