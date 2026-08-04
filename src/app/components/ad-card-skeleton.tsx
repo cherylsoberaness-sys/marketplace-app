@@ -1,6 +1,6 @@
 export default function AdCardSkeleton() {
     return (
-        <article className="size-65 rounded-[7px] border-2 border-zinc-900 bg-[#f7f7f3] p-4">
+        <article className="border-dashed border-zinc-300 flex h-65 w-65 flex-col rounded-[7px] border-2 bg-[#f7f7f3] p-4">
             {/* Title */}
             <div className="h-5 w-3/4 animate-pulse rounded bg-gray-300" />
             {/* Description */}
