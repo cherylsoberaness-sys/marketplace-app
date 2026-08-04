@@ -13,8 +13,8 @@ export function AdDetail({ ad }: AdDetailProps) {
             <p className="mt-6 whitespace-pre-wrap text-base leading-7 text-gray-700">
                 {ad.description}
             </p>
-            <div className="mt-8 space-y-3 border-t border-zinc-300 pt-">
-                <p className="text-lg font-semibold mt-1">${ad.price}</p>
+            <div className="mt-8 space-y-3 border-t border-zinc-300 pt-6">
+                <p className="text-lg font-semibold">${ad.price}</p>
                 <p className="flex flex-wrap gap-2">
                     {ad.tags.map((tag) => (
                         <span key={tag} className="rounded-full border border-zinc-300 px-3 py-1 text-sm">
