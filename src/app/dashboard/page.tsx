@@ -10,13 +10,14 @@ type DashboardPageProps = {
 
 export default async function DashboardPage({ searchParams }: DashboardPageProps) {
     const queryParams = await searchParams;
+    const formKey = JSON.stringify(queryParams);
     const input = parseAdQuery(queryParams);
     const { ads, totalPages } = await getAdsByFilter(input);
     console.log(queryParams);
 
     return (
         <main className="space-y-6">
-            <SearchAdForm query={input.query}  maxPrice={input.maxPrice} tags={input.tags} />
+            <SearchAdForm key={formKey} query={input.query}  maxPrice={input.maxPrice} tags={input.tags} />
             <AdSection ads={ads} /> 
             {totalPages > 0 && (<Pagination page={input.page} totalPages={totalPages} input={input} />)}
         </main>
