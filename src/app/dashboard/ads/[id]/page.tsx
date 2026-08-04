@@ -2,7 +2,7 @@ import { parseAdId } from "@/lib/ad-query";
 import { getAdById, getAdIds } from "@/lib/ads";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { AdCard } from "@/app/components/ad-card";
+import { AdDetail } from "@/app/components/ad-detail";
 import { DeleteAdButton } from "@/app/components/delete-ad-button";
 import { getSession } from "@/lib/auth";
 
@@ -61,7 +61,7 @@ export default async function AdDetailPage({ params }: Props) {
 
     return (
         <section className="grid gap-6">
-            <AdCard hideTitle ad={adDetail} showOwner clickable={false} />
+            <AdDetail ad={adDetail}/>
             {session?.userId === adDetail.ownerId && <DeleteAdButton adId={adId} />}
         </section>
     )
