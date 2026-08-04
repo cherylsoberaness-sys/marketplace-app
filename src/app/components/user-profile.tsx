@@ -25,7 +25,7 @@ export default async function UserProfile() {
             </span>
             {user ? (
                 <form action={logout}>
-                    <button className="text-xs text-muted-foreground underline underline-offset-4" type="submit">
+                    <button className="cursor-pointer text-xs text-muted-foreground underline underline-offset-4" type="submit">
                         Logout
                     </button>
                 </form>

@@ -18,12 +18,12 @@ export function AdForm() {
     const hasTagsError = Boolean(state.fieldErrors.tags?.length);
 
     return (
-        <form action={formAction} className="flex flex-col min-h-120 w-100 rounded-2xl border border-dashed border-zinc-300 bg-[#f7f7f3]
+        <form action={formAction} className="flex flex-col min-h-120 max-w-md rounded-2xl border border-dashed border-zinc-300 bg-[#f7f7f3]
             p-6 shadow-sm">
             <div className="flex flex-col gap-2">
                 <label htmlFor="title">Title:</label>
                 <input type="text" name="title" id="title" className="rounded-lg border px-4 py-2
-                    focus:outline-none transition-colors focus:bg-gray-200" />
+                    focus:outline-none transition-colors focus:bg-blue-100" />
                 <div className="min-h-5">
                     {hasTitleError && (
                         <div id="title-error" className="text-sm text-red-500">
@@ -35,7 +35,7 @@ export function AdForm() {
             <div className="flex flex-col gap-2">
                 <label htmlFor="description">Description:</label>
                 <input type="text" name="description" id="description" className="rounded-lg border px-4 py-2
-                    transition-colors focus:bg-gray-200 focus:outline-none"/>
+                    transition-colors focus:bg-blue-100 focus:outline-none"/>
                 <div className="min-h-5">
                     {hasDescriptionError && (
                         <div id="description-error" className="text-sm text-red-500">
@@ -47,7 +47,7 @@ export function AdForm() {
             <div className="flex flex-col gap-2">
                 <label htmlFor="price">Price:</label>
                 <input type="text" name="price" id="price" className="rounded-lg border px-4 py-2
-                    focus:outline-none transition-colors focus:bg-gray-200" />
+                    focus:outline-none transition-colors focus:bg-blue-100" />
                 <div className="min-h-5">
                     {hasPriceError && (
                         <div id="price-error" className="text-sm text-red-500">
