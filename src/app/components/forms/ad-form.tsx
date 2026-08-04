@@ -18,46 +18,65 @@ export function AdForm() {
     const hasTagsError = Boolean(state.fieldErrors.tags?.length);
 
     return (
-        <form action={formAction} className="grid gap-4 max-w-md">
-            <label htmlFor="title">Title:</label>
-            <input type="text" name="title" id="title" className="border" />
-            {hasTitleError && (
-                <div id="title-error" className="text-red-500">
-                    {state.fieldErrors.title?.join(", ")}
+        <form action={formAction} className="flex flex-col min-h-120 w-100 rounded-2xl border border-dashed border-zinc-300 bg-[#f7f7f3]
+            p-6 shadow-sm">
+            <div className="flex flex-col gap-2">
+                <label htmlFor="title">Title:</label>
+                <input type="text" name="title" id="title" className="rounded-lg border px-4 py-2
+                    focus:outline-none transition-colors focus:bg-gray-200" />
+                <div className="min-h-5">
+                    {hasTitleError && (
+                        <div id="title-error" className="text-sm text-red-500">
+                            {state.fieldErrors.title?.join(", ")}
+                        </div>
+                    )}
                 </div>
-            )}
-            <label htmlFor="description">Description:</label>
-            <input type="text" name="description" id="description" className="border" />
-            {hasDescriptionError && (
-                <div id="description-error" className="text-red-500">
-                    {state.fieldErrors.description?.join(", ")}
+            </div>
+            <div className="flex flex-col gap-2">
+                <label htmlFor="description">Description:</label>
+                <input type="text" name="description" id="description" className="rounded-lg border px-4 py-2
+                    transition-colors focus:bg-gray-200 focus:outline-none"/>
+                <div className="min-h-5">
+                    {hasDescriptionError && (
+                        <div id="description-error" className="text-sm text-red-500">
+                            {state.fieldErrors.description?.join(", ")}
+                        </div>
+                    )}
                 </div>
-            )}
-            <label htmlFor="price">Price:</label>
-            <input type="text" name="price" id="price" className="border" />
-            {hasPriceError && (
-                <div id="price-error" className="text-red-500">
-                    {state.fieldErrors.price?.join(", ")}
+            </div>    
+            <div className="flex flex-col gap-2">
+                <label htmlFor="price">Price:</label>
+                <input type="text" name="price" id="price" className="rounded-lg border px-4 py-2
+                    focus:outline-none transition-colors focus:bg-gray-200" />
+                <div className="min-h-5">
+                    {hasPriceError && (
+                        <div id="price-error" className="text-sm text-red-500">
+                            {state.fieldErrors.price?.join(", ")}
+                        </div>
+                    )}
                 </div>
-            )}
-            
-            {tagsOptions.map((tag) => (
-                <label key={tag} htmlFor={tag}>
-                    {tag}
-                    <input type="checkbox" name="tags" id={tag} value={tag}  className="border" />
-                </label>
-            ))}
-            
-            {hasTagsError && (
-                <div id="tags-error" className="text-red-500">
-                    {state.fieldErrors.tags?.join(", ")}
+            </div>
+            <div>
+                <div className="flex flex-wrap gap-3 mt-1">
+                    {tagsOptions.map((tag) => (
+                        <label key={tag} htmlFor={tag} className="flex cursor-pointer gap-2 text-m">
+                            {tag}
+                            <input type="checkbox" name="tags" id={tag} value={tag}  className="border" />
+                        </label>
+                    ))}
                 </div>
-            )}
-
-            <button type="submit" disabled={isPending}>
+                <div className="min-h-5">
+                    {hasTagsError && (
+                        <div id="tags-error" className="text-sm text-red-500">
+                            {state.fieldErrors.tags?.join(", ")}
+                        </div>
+                    )}
+                </div>
+            </div>
+            <button type="submit" disabled={isPending} className="rounded-lg border cursor-pointer py-1.5 transition hover hover:bg-gray-200">
                 {isPending ? "Creating Ad" : "Create"}
             </button>
-            {state.message && <div>{ state.message }</div>}
+            {state.message && <p className="text-sm text-center text-red-500 mt-1">{ state.message }</p>}
         </form>
     )
 }
