@@ -9,7 +9,12 @@ export default async function Navbar() {
 
     return (
         <nav className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="absolute left-1/2 flex -translate-x-1/2 gap-4 text-xs underline underline-offset-4">
+
+            <div className="flex items-center gap-3">
+                <UserProfile />
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-4 text-xs underline underline-offset-4 md:absolute md:left-1/2 md:-translate-x-1/2">
                 <Link href="/dashboard">
                     Store
                 </Link>
@@ -17,10 +22,6 @@ export default async function Navbar() {
                     Home
                 </Link>
                 {session && <Link href={"/dashboard/ads/create"}>Create ad</Link>}
-            </div>
-
-            <div className="flex items-center gap-3">
-                <UserProfile />
             </div>
         </nav>
     )
