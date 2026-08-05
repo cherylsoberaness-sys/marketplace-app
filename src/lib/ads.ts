@@ -23,7 +23,6 @@ export async function getAdIds(): Promise<number[]> {
 }
 
 export async function getAdsByFilter({ query, maxPrice, tags, page }: AdQuery): Promise<AdsResult> {
-    await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const where: Prisma.AdWhereInput = {
         ...(query !== "" && {
