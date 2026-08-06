@@ -2,7 +2,9 @@
 import { useActionState } from "react";
 import { login, LoginState } from "@/app/login/actions";
 
-
+type LoginFormProps = {
+    from: string | null ;
+}
 
 const initialState: LoginState = {
     status: "idle",
@@ -10,12 +12,13 @@ const initialState: LoginState = {
 }
 
 
-export function LoginForm() {
+export function LoginForm({ from }: LoginFormProps) {
     const [state, formAction, isPending] = useActionState(login, initialState)
     
     return (
         <form action={formAction} className="flex flex-col min-h-50 w-100 rounded-2xl border border-dashed border-zinc-300 bg-[#f7f7f3]
             p-6 shadow-sm space-y-4">
+            <input type="hidden" name="from" value={from ?? ""} />
             <div className="flex flex-row gap-4">
                 <label htmlFor="email" className="w-24">Email:</label>
                 <input id="email"  type="email" name="email" className="flex-1 rounded-lg border px-4 py-2

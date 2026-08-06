@@ -16,6 +16,12 @@ export type LoginState = {
     message: string;
 }
 
+function safeDashboardPath(value: FormDataEntryValue | null): string {
+  if (typeof value !== "string") return "/dashboard";
+  return /^\/dashboard(?:[/?#]|$)/.test(value) ? value : "/dashboard";
+}
+
+
 export async function login(_previousState: LoginState, formData: FormData): Promise<LoginState> {
     
     const result = loginSchema.safeParse({
@@ -53,7 +59,7 @@ export async function login(_previousState: LoginState, formData: FormData): Pro
 
     
     await createSession(user.id);
-    redirect("/dashboard");
+    redirect(safeDashboardPath(formData.get("from")));
 }
 
 export async function logout(): Promise<void> {
