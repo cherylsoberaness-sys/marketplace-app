@@ -2,6 +2,10 @@
 
 ---
 
+## Live app
+
+https://marketplace-app-zeta-murex.vercel.app
+
 ## Features
 
 Users can perform the following actions:
