@@ -1,6 +1,10 @@
-## marketplace app built with next.js
+## Marketplace app built with next.js
 
 ---
+
+## Live app
+
+https://marketplace-app-zeta-murex.vercel.app
 
 ## Features
 
