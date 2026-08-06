@@ -30,6 +30,7 @@ Users can perform the following actions:
 - SSG, SSR, ISR
 - Static params
 - Error Boundaries
+- Proxy (middleware)
 - Unit testing
 
 ## Technologies
