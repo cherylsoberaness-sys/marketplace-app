@@ -15,6 +15,8 @@ Users can perform the following actions:
 - Create ads when authenticated.
 - Delete their own ads.
 
+Guests can browse and search ads without logging in. Authentication is only required to create or delete ads.
+
 ---
 
 ## Concepts
@@ -30,6 +32,7 @@ Users can perform the following actions:
 - SSG, SSR, ISR
 - Static params
 - Error Boundaries
+- Proxy (middleware)
 - Unit testing
 
 ## Technologies
