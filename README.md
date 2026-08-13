@@ -1,6 +1,11 @@
 ## Marketplace app built with next.js
 
 ---
+A small web application for posting product ads.
+
+## Preview
+
+![Marketplace App](./assets/marketplace-preview.png)
 
 ## Live app
 
